@@ -1,19 +1,16 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
-export const ThemeContext = createContext();
+const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "theme1";
-  });
-
+  const [theme, setTheme] = useState("light");
   useEffect(() => {
-    localStorage.setItem("theme", theme);
+    document.body.className = theme;
   }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div className={`app ${theme}`}>{children}</div>
+      <div className={`theme-wrapper ${theme}`}>{children}</div>
     </ThemeContext.Provider>
   );
 };

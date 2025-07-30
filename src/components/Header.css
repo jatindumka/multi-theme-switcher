@@ -1,0 +1,80 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--header-bg);
+    flex-direction: column;
+    display: none;
+    padding: 1rem 2rem;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a,
+  .nav select {
+    padding: 0.5rem 0;
+    width: 100%;
+  }
+}
+
+/* Theme variables – adjust in global styles */
+.theme1 {
+  --header-bg: #f9f9f9;
+  --header-text: #333;
+}
+
+.theme2 {
+  --header-bg: #1c1c1c;
+  --header-text: #fff;
+}
+
+.theme3 {
+  --header-bg: #fffcf2;
+  --header-text: #444;
+}

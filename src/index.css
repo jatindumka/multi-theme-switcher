@@ -12,6 +12,25 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.theme1 {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+}
+.theme2 {
+  font-family: Georgia, serif;
+  background: #a1d46e;
+  color: white;
+}
+.theme3 {
+  font-family: "Pacifico", cursive;
+  background: #ffe4e1;
+}
+
+@media (max-width: 400px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 a {
   font-weight: 500;
@@ -24,8 +43,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+
   min-width: 320px;
   min-height: 100vh;
 }
